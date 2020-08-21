@@ -3,7 +3,7 @@ import Utils from "c/utils";
 import { refreshApex } from "@salesforce/apex";
 import { NavigationMixin } from "lightning/navigation";
 //import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
-import getAdminDataList from "@salesforce/apex/AdminDataService.getAdminDataList";
+import getCaseList from "@salesforce/apex/CaseService.getCaseList";
 
 const columnConfig = [
   {
@@ -215,11 +215,11 @@ export default class CaseDataList extends NavigationMixin(LightningElement) {
   _wiredStudentResult;
   columnsList = columnConfig;
   @track dataList = [];
-  @wire(getAdminDataList, {
-    adminCode: "$inputedAdminCode",
-    description: "$inputedDescription"
+  @wire(getCaseList, {
+    filterMap: "$filterMap"
   })
-  wired_getAdminDataList(result) {
+  wired_getCaseList(result) {
+    console.log(result);
     this.loading = true;
     this._wiredStudentResult = result;
     this.dataList = testDataList;
