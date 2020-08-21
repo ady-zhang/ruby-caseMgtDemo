@@ -312,27 +312,16 @@ export default class CaseDataList extends NavigationMixin(LightningElement) {
   }
 
   onNew() {
-    Utils.showModal(
-      this,
-      "Not Available",
-      "The delete row function is not available."
-    );
-    // Opens the new Admin Data record modal dialog with the Admin Data Marter = 'KEYN'
-    /*
-        let pageInfo = {
-          type: "standard__objectPage",
-          attributes: {
-            objectApiName: "Cms_Admin_Data__c",
-            actionName: "new"
-          },
-          state: {
-            defaultFieldValues: encodeDefaultFieldValues({
-              Admin_Code_Master__c: this.acMasterId
-            })
-          }
-        };
-        this[NavigationMixin.Navigate](pageInfo);
-      */
+    this.triggerNewAction();
+  }
+
+  triggerNewAction() {
+    const event = new CustomEvent("triggeraction", {
+      detail: {
+        newMode: true
+      }
+    });
+    this.dispatchEvent(event);
   }
 
   btnGroupDisabled = true;

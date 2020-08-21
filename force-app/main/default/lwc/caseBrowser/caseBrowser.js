@@ -19,4 +19,13 @@ export default class CaseBrowser extends LightningElement {
   handleFilterChange(event) {
     this.filterMap = event.detail;
   }
+
+  newMode = false;
+  listMode = true;
+  handleTriggerAction(event) {
+    if(true === event.detail.newMode) {
+      this.newMode = true;
+      this.listMode = false;
+    }
+  }
 }
