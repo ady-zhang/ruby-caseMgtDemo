@@ -1,0 +1,282 @@
+<template>
+  <lightning-card variant="Narrow" title={name} icon-name="utility:search">
+    <lightning-button-group slot="actions">
+      <lightning-button
+        variant="brand-outline"
+        label="Reset"
+        onclick={handleReset}
+      ></lightning-button>
+    </lightning-button-group>
+    <lightning-layout multiple-rows>
+      <!-- LOB drop-down -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-combobox
+          name="lob"
+          label="Select LOB"
+          variant="label-hidden"
+          options={lobs}
+          value={lob}
+          placeholder="Select a LOB"
+          onchange={onChange}
+        >
+        </lightning-combobox>
+      </lightning-layout-item>
+
+      <!-- Case Type drop-down -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-combobox
+          name="caseType"
+          label="Select Case Type"
+          variant="label-hidden"
+          value={caseType}
+          placeholder="Select a case type"
+          options={caseTypes}
+          onchange={onChange}
+        >
+        </lightning-combobox>
+      </lightning-layout-item>
+
+      <!-- Case Sub Type drop-down -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-combobox
+          name="caseSubType"
+          label="Select Case Sub Type"
+          variant="label-hidden"
+          value={caseSubType}
+          placeholder="Select a case sub type"
+          options={caseSubTypes}
+          onchange={onChange}
+        >
+        </lightning-combobox>
+      </lightning-layout-item>
+
+      <!-- Case Num -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="text"
+          variant="label-hidden"
+          name="caseNum"
+          label="Case Num"
+          placeholder="type case num..."
+          value={caseNum}
+          onchange={onChange}
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <!-- Account Num -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="text"
+          variant="label-hidden"
+          name="accountNum"
+          label="Account Num"
+          placeholder="type account num..."
+          value={accountNum}
+          onchange={onChange}
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <!-- Mobile Num -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="text"
+          variant="label-hidden"
+          name="mobileNum"
+          label="Mobile Num"
+          placeholder="type mobile num..."
+          value={mobileNum}
+          onchange={onChange}
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <!-- Customer Num -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="text"
+          variant="label-hidden"
+          name="customerNum"
+          label="Customer Num"
+          placeholder="type customer num..."
+          value={customerNum}
+          onchange={onChange}
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <!-- Customer Name -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="text"
+          variant="label-hidden"
+          name="customerName"
+          label="Customer Name"
+          placeholder="type customer name..."
+          value={customerName}
+          onchange={onChange}
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <!-- Case Status drop-down -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-combobox
+          name="caseStatus"
+          label="Select Case Status"
+          variant="label-hidden"
+          value={caseStatus}
+          placeholder="Select a case status"
+          options={caseStatuses}
+          onchange={onChange}
+        >
+        </lightning-combobox>
+      </lightning-layout-item>
+
+      <!-- Create Staff Num -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="text"
+          variant="label-hidden"
+          name="createStaffNum"
+          label="Create Staff Num"
+          placeholder="type create staff num..."
+          value={createStaffNum}
+          onchange={onChange}
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <!-- Create Date -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="date"
+          variant="label-hidden"
+          name="createDateFrom"
+          label="Create Date From"
+          placeholder="Create Date from..."
+          value={createDateFrom}
+          onchange={onChange}
+          date-style="short"
+        ></lightning-input>
+      </lightning-layout-item>
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="date"
+          variant="label-hidden"
+          name="createDateTo"
+          label="Create Date To"
+          placeholder="Create Date to..."
+          value={createDateTo}
+          onchange={onChange}
+          date-style="short"
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <!-- Close Date -->
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="date"
+          variant="label-hidden"
+          name="closeDateFrom"
+          label="Close Date From"
+          placeholder="Close Date from..."
+          value={closeDateFrom}
+          onchange={onChange}
+          date-style="short"
+        ></lightning-input>
+      </lightning-layout-item>
+      <lightning-layout-item
+        size="12"
+        small-device-size="6"
+        medium-device-size="4"
+        large-device-size="3"
+        padding="around-small"
+      >
+        <lightning-input
+          type="date"
+          variant="label-hidden"
+          name="closeDateTo"
+          label="Close Date To"
+          placeholder="Close Date to..."
+          value={closeDateTo}
+          onchange={onChange}
+          date-style="short"
+        ></lightning-input>
+      </lightning-layout-item>
+    </lightning-layout>
+  </lightning-card>
+</template>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Admin Code Parent --></label>
+    <name>Admin_Code_Parent__c</name>
+    <relationshipLabel><!-- Admin Code Children --></relationshipLabel>
+</CustomFieldTranslation>

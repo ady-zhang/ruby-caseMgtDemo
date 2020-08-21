@@ -1,0 +1,27 @@
+<template>
+  <span onshowmodal={handleShowModal}>
+    <c-modal header={modalHeader}>
+      {modalContent}
+      <div slot="footer">
+        <lightning-button
+          label="Close"
+          variant="brand"
+          onclick={closeModal}
+        ></lightning-button>
+      </div>
+    </c-modal>
+
+    <lightning-tabset variant="scoped" active-tab-value="one">
+      <lightning-tab label="Admin Data List" value="one">
+        <div class="slds-scrollable scrollerSize">
+          <c-admin-data-list></c-admin-data-list>
+        </div>
+      </lightning-tab>
+      <lightning-tab label="Admin Data Children" value="two">
+        <div class="slds-scrollable scrollerSize">
+          <c-admin-data-children></c-admin-data-children>
+        </div>
+      </lightning-tab>
+    </lightning-tabset>
+  </span>
+</template>

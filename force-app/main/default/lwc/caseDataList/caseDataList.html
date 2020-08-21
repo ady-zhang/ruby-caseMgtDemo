@@ -1,0 +1,48 @@
+<template>
+  <lightning-card title={title}>
+    <lightning-button-group slot="actions">
+      <lightning-button
+        variant="brand-outline"
+        icon-name="utility:refresh"
+        label="Refresh"
+        onclick={onRefresh}
+      ></lightning-button>
+      <lightning-button
+        variant="brand-outline"
+        icon-name="utility:new"
+        label="New"
+        onclick={onNew}
+      ></lightning-button>
+      <lightning-button
+        variant="brand-outline"
+        icon-name="utility:edit"
+        label="Edit"
+        onclick={onEdit}
+        disabled={btnGroupDisabled}
+      ></lightning-button>
+    </lightning-button-group>
+    <!-- Admin Data Table -->
+    <div class="slds-is-relative">
+      <template if:true={loading}>
+        <lightning-spinner
+          alternative-text="Loading"
+          variant="brand"
+          size="large"
+        ></lightning-spinner>
+      </template>
+
+      <lightning-datatable
+        key-field="Id"
+        data={dataList}
+        columns={columnsList}
+        sorted-by={sortedBy}
+        sorted-direction={sortDirection}
+        default-sort-direction={defaultSortDirection}
+        onsort={onHandleSort}
+        onrowaction={handleRowAction}
+        onrowselection={onRowSelection}
+      >
+      </lightning-datatable>
+    </div>
+  </lightning-card>
+</template>
