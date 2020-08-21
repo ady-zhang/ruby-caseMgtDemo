@@ -1,22 +1,11 @@
 <template>
   <div class={MyClass}>
-    <section
-      role="dialog"
-      tabindex="-1"
-      aria-labelledby="modal-heading-01"
-      aria-modal="true"
-      aria-describedby="modal-content-id-1"
-      class="slds-modal slds-fade-in-open"
-    >
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+      aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
       <div class="slds-modal__container">
         <header class="slds-modal__header">
-          <lightning-button-icon
-            class="slds-modal__close"
-            title="Close"
-            icon-name="utility:close"
-            icon-class="slds-button_icon-inverse"
-            onclick={handleDialogClose}
-          ></lightning-button-icon>
+          <lightning-button-icon class="slds-modal__close" title="Close" icon-name="utility:close"
+            icon-class="slds-button_icon-inverse" onclick={handleDialogClose}></lightning-button-icon>
 
           <template if:true={hasHeaderString}>
             <h2 class="slds-text-heading_medium slds-hyphenate header-string">
@@ -34,10 +23,7 @@
             <slot name="tagline" onslotchange={handeSlotTaglineChange}></slot>
           </p>
         </header>
-        <div
-          class="slds-modal__content slds-p-around_medium"
-          id="modal-content-id-1"
-        >
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
           <slot></slot>
         </div>
         <footer class="slds-modal__footer {MyClass}">

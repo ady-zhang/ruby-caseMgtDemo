@@ -31,18 +31,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ady-zhang/ruby-caseMgtDemo.git"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
-      "prettier --write"
-    ],
-    "**/{aura|lwc}/**": [
-      "eslint"
-    ]
   }
 }

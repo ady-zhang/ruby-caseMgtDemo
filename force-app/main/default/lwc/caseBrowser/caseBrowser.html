@@ -3,17 +3,11 @@
     <c-modal header={modalHeader}>
       {modalContent}
       <div slot="footer">
-        <lightning-button
-          label="Close"
-          variant="brand"
-          onclick={closeModal}
-        ></lightning-button>
+        <lightning-button label="Close" variant="brand" onclick={closeModal}></lightning-button>
       </div>
     </c-modal>
 
-    <c-case-filter-form
-      onfilterchange={handleFilterChange}
-    ></c-case-filter-form>
+    <c-case-filter-form onfilterchange={handleFilterChange}></c-case-filter-form>
 
     <div class="slds-scrollable scrollerSize">
       <c-case-data-list filter-map={filterMap}></c-case-data-list>
