@@ -1,0 +1,144 @@
+<template>
+    <!--
+    <lightning-button-group slot="actions">
+        <lightning-button variant="brand-outline" icon-name="utility:save" label="Save" onclick={onSave}>
+        </lightning-button>
+    </lightning-button-group>
+-->
+    <form class="slds-form_stacked slds-p-around_medium">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox name="caseType" label="Case Type" value={caseType} placeholder="Select Case Type"
+                    options={caseTypes} onchange={handleCaseTypeChange}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox name="caseSubType" label="Case Sub Type" value={caseSubType}
+                    placeholder="Select Case Sub Type" options={caseSubTypes} onchange={handleCaseSubTypeChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox name="subCaseStatus" label="Sub Case Status" value={subCaseStatus}
+                    placeholder="Select Sub Case Status" options={subCaseStatuses} onchange={handleSubCaseStatusChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="network" label="Network" value={network} disabled="ture">
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="serviceType" label="Service Type" value={serviceType}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox name="billCutDate" label="Bill Cut Date" value={billCutDate}
+                    placeholder="Select Bill Cut Date" options={billCutDates} onchange={handleChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="sixMthAve" label="6 Mth Ave($)" value={sixMthAve}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="balance" label="Balance($)" value={balance}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="mobileNum" label="Mobile Num" value={mobileNum}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="mobileStatus" label="Mobile Status" value={mobileStatus}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="accountNum" label="Account Num" value={accountNum}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="brand" label="Brand" value={brand}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="date" name="receiveDate" label="Receive Date" value={receiveDate}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="premierCust" label="Premier Cust" value={premierCust}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-textarea name="premierCustDesc" label="Premier Cust Desc"
+                    placeholder="type Premier Cust Desc..." value={premierCustDesc}></lightning-textarea>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-textarea name="preProdInfo" label="Prepaid product info / MVNO SIM Item"
+                    placeholder="type here..." value={preProdInfo}></lightning-textarea>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="targetTime" label="Target Time" value={targetTime}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="remainTime" label="Remain Time" value={remainTime}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="subCaseOwner" label="Sub Case Owner" value={subCaseOwner}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="subCaseResolver" label="Sub Case Resolver" value={subCaseResolver}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="backupResolver" label="Backup Resolver" value={backupResolver}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="checkbox" name="isUrgentCase" label="Urgent Case" value={isUrgentCase}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="checkbox" name="isConsiderHoliday" label="Consider Holiday"
+                    value={isConsiderHoliday}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="createDate" label="Create Date" value={createDate} disabled="ture">
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="createBy" label="Create By" value={createBy} disabled="ture">
+                </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <c-case-nature-table in-natures={natures}></c-case-nature-table>
+
+    </form>
+</template>

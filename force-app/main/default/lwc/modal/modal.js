@@ -1,9 +1,9 @@
 import { LightningElement, api } from "lwc";
 
-const CSS_CLASS = "modal-hidden";
+const HIDDEN_CLASS = "modal-hidden";
 
 export default class Modal extends LightningElement {
-  MyClass = CSS_CLASS;
+  divClass = HIDDEN_CLASS;
 
   @api
   set header(value) {
@@ -19,12 +19,12 @@ export default class Modal extends LightningElement {
 
   @api show() {
     const outerDivEl = this.template.querySelector("div");
-    outerDivEl.classList.remove(CSS_CLASS);
+    outerDivEl.classList.remove(HIDDEN_CLASS);
   }
 
   @api hide() {
     const outerDivEl = this.template.querySelector("div");
-    outerDivEl.classList.add(CSS_CLASS);
+    outerDivEl.classList.add(HIDDEN_CLASS);
   }
 
   handleDialogClose() {
@@ -33,11 +33,11 @@ export default class Modal extends LightningElement {
 
   handleSlotTaglineChange() {
     const taglineEl = this.template.querySelector("p");
-    taglineEl.classList.remove(CSS_CLASS);
+    taglineEl.classList.remove(HIDDEN_CLASS);
   }
 
   handleSlotFooterChange() {
     const footerEl = this.template.querySelector("footer");
-    footerEl.classList.remove(CSS_CLASS);
+    footerEl.classList.remove(HIDDEN_CLASS);
   }
 }

@@ -1,3 +1,33 @@
 <template>
-    Case Creation...
+    <span onshowmodal={handleShowDialog}>
+        <c-sub-case-creation case-num={caseNum}>
+            <div slot="footer">
+                <lightning-button label="Close" variant="brand" onclick={closeSubCase}></lightning-button>
+            </div>
+        </c-sub-case-creation>
+    </span>
+    <lightning-card title={caseTitle}>
+        <c-case-creation-form in-case-num={caseNum} onsavecase={handleSaveCase}></c-case-creation-form>
+    </lightning-card>
+    <lightning-card title="subCaseTitle">
+        <lightning-button-group slot="actions">
+            <lightning-button variant="brand-outline" icon-name="utility:new" label="New Sub Case"
+                onclick={onNewSubCase}>
+            </lightning-button>
+            <lightning-button variant="brand-outline" icon-name="utility:save" label="Save" onclick={onSaveSubCase}>
+            </lightning-button>
+        </lightning-button-group>
+        <lightning-tabset variant="standard" active-tab-value="one">
+            <lightning-tab label="12345-1" value="one">
+                <c-case-creation-sub-case-form in-case-num={caseNum} in-sub-case-num="1" onsavecase={handleSaveSubCase}></c-case-creation-sub-case-form>
+            </lightning-tab>
+            <lightning-tab label="12345-2" value="two">
+                <c-case-creation-sub-case-form in-case-num={caseNum} in-sub-case-num="2" onsavecase={handleSaveSubCase}></c-case-creation-sub-case-form>
+            </lightning-tab>
+            <lightning-tab label="12345-3" value="three">
+                <c-case-creation-sub-case-form in-case-num={caseNum} in-sub-case-num="3" onsavecase={handleSaveSubCase}></c-case-creation-sub-case-form>
+            </lightning-tab>
+        </lightning-tabset>
+
+    </lightning-card>
 </template>

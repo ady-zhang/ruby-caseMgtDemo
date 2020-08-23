@@ -1,0 +1,72 @@
+<template>
+<!--
+    <lightning-button-group slot="actions">
+        <lightning-button variant="brand-outline" icon-name="utility:save" label="Save" onclick={onSave}>
+        </lightning-button>
+    </lightning-button-group>
+-->
+    <form class="slds-form_stacked slds-p-around_medium">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="caseNum" label="Case Num" value={caseNum} disabled="ture">
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="customerNum" label="Customer Num" value={customerNum}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="customerName" label="Customer Name" value={customerName}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="customerCat" label="Customer Cat" value={customerCat}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="callerNum" label="Caller Num" value={callerNum}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="callerName" label="Caller Name" value={callerName}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+            padding="around-small">
+            <lightning-input type="text" name="contactName" label="Contact Name" value={contactName}>
+            </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+            padding="around-small">
+            <lightning-input type="text" name="contactNum1" label="Contact Num" value={contactNum1}>
+            </lightning-input>
+        </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="contactNum2" label="Contact Num" value={contactNum2}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="contactFax" label="Contact Fax" value={contactFax}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="createDate" label="Create Date" value={createDate} disabled="ture">
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="text" name="createBy" label="Create By" value={createBy} disabled="ture">
+                </lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+    </form>
+</template>

@@ -23,6 +23,15 @@ export default class Utils {
     firingComponent.dispatchEvent(evt);
   };
 
+  static showDialog = (firingComponent, eventType, dialogType) => {
+    const evt = new CustomEvent(eventType, {
+      detail: { dialogType },
+      bubbles: true,
+      composed: true
+    });
+    firingComponent.dispatchEvent(evt);
+  }
+
   static _getDisplayValue = (data, field) => {
     return getFieldDisplayValue(data, field)
       ? getFieldDisplayValue(data, field)
