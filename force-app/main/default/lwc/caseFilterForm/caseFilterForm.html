@@ -2,6 +2,9 @@
   <lightning-card variant="Narrow" title={name} icon-name="utility:search">
     <lightning-button-group slot="actions">
       <lightning-button variant="brand-outline" label="Reset" onclick={handleReset}></lightning-button>
+      <!-- Open or Close function -->
+      <lightning-button-icon icon-name={iconName} alternative-text={iconTitle} title={iconTitle}
+        onclick={handleIconAction}></lightning-button-icon>
     </lightning-button-group>
     <lightning-layout multiple-rows>
       <!-- LOB drop-down -->

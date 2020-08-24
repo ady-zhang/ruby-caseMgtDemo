@@ -2,6 +2,8 @@ import { LightningElement, track } from "lwc";
 import Utils from "c/utils";
 //import STATUS_OPEN from '@salesforce/label/c.STATUS_OPEN';
 
+const HIDDEN_CLASS = 'layout-hidden';
+
 export default class CaseFilterForm extends LightningElement {
   name = "Filter Cases";
   error;
@@ -105,5 +107,23 @@ export default class CaseFilterForm extends LightningElement {
 
   onCaseSubTypeChange(event) {
     console.log(event);
+  }
+
+  /** Open or Close function */
+  hiddenLayout = true;
+  iconTitle = 'Close';
+  iconName = 'utility:jump_to_top';
+  handleIconAction() {
+    const layoutEl = this.template.querySelector("lightning-layout");
+    if (this.hiddenLayout) {
+      layoutEl.classList.add(HIDDEN_CLASS);
+      this.iconTitle = 'Open';
+      this.iconName = 'utility:jump_to_bottom';
+    } else {
+      layoutEl.classList.remove(HIDDEN_CLASS);
+      this.iconTitle = 'Close';
+      this.iconName = 'utility:jump_to_top';
+    }
+    this.hiddenLayout = !this.hiddenLayout;
   }
 }

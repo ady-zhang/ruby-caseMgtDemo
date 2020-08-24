@@ -13,7 +13,7 @@
         </lightning-button-group>
         <c-case-creation-form in-case-num={caseNum} onsavecase={handleSaveCase}></c-case-creation-form>
     </lightning-card>
-    <lightning-card title="subCaseTitle">
+    <lightning-card title={subCaseTitle}>
         <lightning-button-group slot="actions">
             <lightning-button variant="brand-outline" icon-name="utility:new" label="New Sub Case"
                 onclick={onNewSubCase}>
