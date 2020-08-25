@@ -1,4 +1,7 @@
 export default class Consts {
-  static keyn = "KEYN";
-  static keynChild = "KEYNChild";
+  static KEYN = "KEYN";
+
+  static CSS_HIDDEN = 'css-hidden';
+  static OFF_ICON_NAME = 'utility:jump_to_top';
+  static ON_ICON_NAME = 'utility:jump_to_bottom';
 }

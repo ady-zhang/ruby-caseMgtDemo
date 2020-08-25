@@ -10,6 +10,9 @@
         <lightning-button-group slot="actions">
             <lightning-button variant="brand-outline" icon-name="utility:save" label="Save" onclick={onSave}>
             </lightning-button>
+            <!-- Open or Close function -->
+            <lightning-button-icon icon-name={iconName} alternative-text={iconTitle} title={iconTitle}
+                onclick={handleIconAction}></lightning-button-icon>
         </lightning-button-group>
         <c-case-creation-form in-case-num={caseNum} onsavecase={handleSaveCase}></c-case-creation-form>
     </lightning-card>

@@ -61,6 +61,11 @@ const columnConfig = [
     fieldName: "Create_Date",
     type: "text"
   },
+  {
+    label: "Brand",
+    fieldName: "Brand",
+    type: "text"
+  }
   /*    {
         label: "Out Target Indicator",
         fieldName: "Out_Target_Indicator",
@@ -96,16 +101,12 @@ const columnConfig = [
         fieldName: "Bill_Adjustment_Reason",
         type: "text"
     },
-*/ {
-    label: "Brand",
-    fieldName: "Brand",
-    type: "text"
-  },
-  {
-    label: "Delete Indicate",
-    fieldName: "Delete_Indicate",
-    type: "text"
-  }
+    {
+      label: "Delete Indicate",
+      fieldName: "Delete_Indicate",
+      type: "text"
+    }
+*/ 
 ];
 
 const testDataList = [

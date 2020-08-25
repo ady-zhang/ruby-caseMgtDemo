@@ -95,7 +95,7 @@ const testDataList = [
 
 export default class AdminDataList extends NavigationMixin(LightningElement) {
   title = "Admin Data List";
-  acMasterId = Consts.keyn;
+  acMasterId = Consts.KEYN;
   inputedAdminCode = "";
   inputedDescription = "";
   selectedAdminCodeId = "";

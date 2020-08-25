@@ -1,6 +1,5 @@
 import { LightningElement, api } from "lwc";
-
-const HIDDEN_CLASS = 'layout-hidden';
+import Consts from "c/consts";
 
 export default class AdminDataFilterForm extends LightningElement {
   title = "Filter Admin Data";
@@ -37,17 +36,17 @@ export default class AdminDataFilterForm extends LightningElement {
   /** Open or Close function */
   hiddenLayout = true;
   iconTitle = 'Close';
-  iconName = 'utility:jump_to_top';
+  iconName = Consts.OFF_ICON_NAME;
   handleIconAction() {
     const layoutEl = this.template.querySelector("lightning-layout");
     if (this.hiddenLayout) {
-      layoutEl.classList.add(HIDDEN_CLASS);
+      layoutEl.classList.add(Consts.CSS_HIDDEN);
+      this.iconName = Consts.ON_ICON_NAME;
       this.iconTitle = 'Open';
-      this.iconName = 'utility:jump_to_bottom';
     } else {
-      layoutEl.classList.remove(HIDDEN_CLASS);
+      layoutEl.classList.remove(Consts.CSS_HIDDEN);
+      this.iconName = Consts.OFF_ICON_NAME;
       this.iconTitle = 'Close';
-      this.iconName = 'utility:jump_to_top';
     }
     this.hiddenLayout = !this.hiddenLayout;
   }
