@@ -1,0 +1,24 @@
+<template>
+    <div class={divClass}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_small"
+            aria-labelledby="welcome-mat-112-label" aria-describedby="welcome-mat-112-content" aria-modal="true">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header slds-modal__header_empty">
+                    <lightning-button-icon class="slds-modal__close" title="Close" icon-name="utility:close"
+                        icon-class="slds-button_icon-inverse" onclick={handleClose}></lightning-button-icon>
+                </header>
+                <div class="slds-modal__content" id="welcome-mat-112-content">
+                    <slot></slot>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button-group>
+                        <lightning-button variant="success" icon-name="utility:refresh" label="Reset" onclick={handleReset}></lightning-button>
+                        <lightning-button variant="brand" icon-name="utility:save" label="Save" onclick={handleSave}></lightning-button>
+                        <lightning-button variant="destructive" icon-name="utility:close" label="Close" onclick={handleClose}></lightning-button>
+                    </lightning-button-group>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</template>

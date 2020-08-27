@@ -1,0 +1,48 @@
+<template>
+    <form class="slds-form_stacked slds-p-around_medium">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input required type="text" name="acMaster" label="Admin Code Master" value={acMaster}
+                    disabled>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input required type="text" name="acValue" label="Admin Code" value={acValue}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input required type="text" name="acDescEn" label="Description(English)" value={acDescEn}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input required type="text" name="acDescTc" label="Description(Traditional Chinese)"
+                    value={acDescTc}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input required type="text" name="acDescSc" label="Description(Simplified Chinese)"
+                    value={acDescSc}>
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-dual-listbox name="acFiltering" label="Admin Code Filtering" source-label="Available"
+                    selected-label="Selected" field-level-help="This is an Admin Code Filtering dual listbox"
+                    options={acFilteringOptions} value={acFilteringValues} onchange={handleAcFilteringChange}>
+                </lightning-dual-listbox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-dual-listbox name="acMapping" label="Admin Code Mapping" source-label="Available"
+                    selected-label="Selected" field-level-help="This is an Admin Code Mapping dual listbox"
+                    options={acMappingOptions} value={acMappingValues} onchange={handleAcMappingChange}>
+                </lightning-dual-listbox>
+            </lightning-layout-item>
+        </lightning-layout>
+    </form>
+</template>

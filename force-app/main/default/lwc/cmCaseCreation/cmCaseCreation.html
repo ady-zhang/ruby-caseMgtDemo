@@ -1,6 +1,6 @@
 <template>
-    <span onshowmodal={handleShowDialog}>
-        <c-cm-sub-case-creation case-num={caseNum} sub-case-num={subCaseNum}></c-cm-sub-case-creation>
+    <span onshowsubcasedialog={handleShowDialog}>
+        <c-cm-sub-case-creation-dialog case-num={caseNum} sub-case-num={subCaseNum}></c-cm-sub-case-creation-dialog>
     </span>
     <lightning-card title={caseTitle}>
         <lightning-button-group slot="actions">

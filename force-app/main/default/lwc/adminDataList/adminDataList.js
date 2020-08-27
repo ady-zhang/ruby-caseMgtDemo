@@ -3,7 +3,7 @@ import Utils from "c/utils";
 import Consts from "c/consts";
 import { refreshApex } from "@salesforce/apex";
 import { NavigationMixin } from "lightning/navigation";
-import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
+//import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
 import getAdminDataList from "@salesforce/apex/AdminDataService.getAdminDataList";
 
 export default class AdminDataList extends NavigationMixin(LightningElement) {
@@ -121,19 +121,24 @@ export default class AdminDataList extends NavigationMixin(LightningElement) {
 
   onNew() {
     // Opens the new Admin Data record modal dialog with the Admin Data Marter = 'KEYN'
-    let pageInfo = {
-      type: "standard__objectPage",
-      attributes: {
-        objectApiName: "Cms_Admin_Data__c",
-        actionName: "new"
-      },
-      state: {
-        defaultFieldValues: encodeDefaultFieldValues({
-          Admin_Code_Master__c: this.acMasterId
-        })
-      }
-    };
-    this[NavigationMixin.Navigate](pageInfo);
+    /*
+        let pageInfo = {
+          type: "standard__objectPage",
+          attributes: {
+            objectApiName: "Cms_Admin_Data__c",
+            actionName: "new"
+          },
+          state: {
+            defaultFieldValues: encodeDefaultFieldValues({
+              Admin_Code_Master__c: this.acMasterId
+            })
+          }
+        };
+        this[NavigationMixin.Navigate](pageInfo);
+    */
+    const dialog = this.template.querySelector('c-admin-data-creation-dialog');
+    dialog.show();
+
   }
 
   btnGroupDisabled = true;
