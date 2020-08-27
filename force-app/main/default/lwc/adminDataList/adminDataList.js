@@ -6,93 +6,6 @@ import { NavigationMixin } from "lightning/navigation";
 import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
 import getAdminDataList from "@salesforce/apex/AdminDataService.getAdminDataList";
 
-const columnConfig = [
-  {
-    label: "Admin Code",
-    fieldName: "Admin_Code",
-    type: "text"
-  },
-  {
-    label: "Description(English)",
-    fieldName: "Description_En",
-    type: "text"
-  },
-  {
-    label: "Description(Traditional Chinese)",
-    fieldName: "Description_Tc",
-    type: "text"
-  },
-  {
-    label: "Description(Simplified Chinese)",
-    fieldName: "Description_Sc",
-    type: "text"
-  },
-  {
-    label: "Admin Code Filtering",
-    fieldName: "Admin_Code_Filtering",
-    type: "text"
-  },
-  {
-    label: "Admin Code Mapping",
-    fieldName: "Admin_Code_Mapping",
-    type: "text"
-  },
-  {
-    label: "Delete Indicate",
-    fieldName: "Delete_Indicate",
-    type: "text"
-  },
-  {
-    type: "action",
-    typeAttributes: {
-      rowActions: [{ label: "Delete", name: "delete" }]
-    }
-  }
-];
-
-const testDataList = [
-  {
-    Id: "1001",
-    Admin_Code: "50",
-    Description_En: "Case Type",
-    Description_Tc: "Case Type",
-    Description_Sc: "Case Type",
-    Admin_Code_Filtering: "LOB",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  },
-  {
-    Id: "1002",
-    Admin_Code: "60",
-    Description_En: "Case Sub Type",
-    Description_Tc: "Case Sub Type",
-    Description_Sc: "Case Sub Type",
-    Admin_Code_Filtering: "50",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  },
-  {
-    Id: "1003",
-    Admin_Code: "70",
-    Description_En: "Case Nature",
-    Description_Tc: "Case Nature",
-    Description_Sc: "Case Nature",
-    Admin_Code_Filtering: "60",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  },
-  {
-    Id: "1004",
-    Admin_Code: "80",
-    Description_En: "Case Sub Nature",
-    Description_Tc: "Case Sub Nature",
-    Description_Sc: "Case Sub Nature",
-    Admin_Code_Filtering: "70",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  }
-];
-
 export default class AdminDataList extends NavigationMixin(LightningElement) {
   title = "Admin Data List";
   acMasterId = Consts.KEYN;
@@ -108,7 +21,7 @@ export default class AdminDataList extends NavigationMixin(LightningElement) {
   error;
   loading = true;
   _wiredStudentResult;
-  columnsList = columnConfig;
+  columnsList = Consts.ad_list_columnConfig();
   @track dataList = [];
   @wire(getAdminDataList, {
     adminCode: "$inputedAdminCode",
@@ -117,7 +30,7 @@ export default class AdminDataList extends NavigationMixin(LightningElement) {
   wired_getAdminDataList(result) {
     this.loading = true;
     this._wiredStudentResult = result;
-    this.dataList = testDataList;
+    this.dataList = Consts.ad_list_testDataList();
     if (result.data) {
       console.log("result.data:", result.data);
     } else if (result.error) {

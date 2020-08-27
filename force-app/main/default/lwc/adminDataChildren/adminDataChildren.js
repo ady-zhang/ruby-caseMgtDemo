@@ -1,105 +1,10 @@
 import { LightningElement, api, track, wire } from "lwc";
 import Utils from "c/utils";
+import Consts from "c/consts";
 import { refreshApex } from "@salesforce/apex";
 import { NavigationMixin } from "lightning/navigation";
 import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
 import getAdminDataChildren from "@salesforce/apex/AdminDataService.getAdminDataChildren";
-
-const columnConfig = [
-  {
-    label: "Admin Code Master",
-    fieldName: "Admin_Code_Master",
-    type: "text"
-  },
-  {
-    label: "Admin Code",
-    fieldName: "Admin_Code",
-    type: "text"
-  },
-  {
-    label: "Description(English)",
-    fieldName: "Description_En",
-    type: "text"
-  },
-  {
-    label: "Description(Traditional Chinese)",
-    fieldName: "Description_Tc",
-    type: "text"
-  },
-  {
-    label: "Description(Simplified Chinese)",
-    fieldName: "Description_Sc",
-    type: "text"
-  },
-  {
-    label: "Admin Code Filtering",
-    fieldName: "Admin_Code_Filtering",
-    type: "text"
-  },
-  {
-    label: "Admin Code Mapping",
-    fieldName: "Admin_Code_Mapping",
-    type: "text"
-  },
-  {
-    label: "Delete Indicate",
-    fieldName: "Delete_Indicate",
-    type: "text"
-  },
-  {
-    type: "action",
-    typeAttributes: {
-      rowActions: [{ label: "Delete", name: "delete" }]
-    }
-  }
-];
-
-const testDataList = [
-  {
-    Id: "10001",
-    Admin_Code_Master: "50",
-    Admin_Code: "10",
-    Description_En: "Charges Dispute",
-    Description_Tc: "收費爭議",
-    Description_Sc: "收费争议",
-    Admin_Code_Filtering: "MOB",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  },
-  {
-    Id: "10002",
-    Admin_Code_Master: "50",
-    Admin_Code: "11",
-    Description_En: "Bill Adjustment",
-    Description_Tc: "Bill Adjustment",
-    Description_Sc: "Bill Adjustment",
-    Admin_Code_Filtering: "MOB",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  },
-  {
-    Id: "10003",
-    Admin_Code_Master: "50",
-    Admin_Code: "20",
-    Description_En: "General Complaint",
-    Description_Tc: "基本投訴",
-    Description_Sc: "基本投诉",
-    Admin_Code_Filtering: "MOB",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  },
-  {
-    Id: "10004",
-    Admin_Code_Master: "50",
-    Admin_Code: "30",
-    Description_En: "Network Complaint",
-    Description_Tc: "網络投訴",
-    Description_Sc: "网络投诉",
-    Admin_Code_Filtering: "MOB,MVNO",
-    Admin_Code_Mapping: "",
-    Delete_Indicate: "N"
-  }
-];
 
 export default class AdminDataChildren extends NavigationMixin(
   LightningElement
@@ -118,7 +23,7 @@ export default class AdminDataChildren extends NavigationMixin(
   error;
   loading = true;
   _wiredStudentResult;
-  columnsList = columnConfig;
+  columnsList = Consts.ad_children_columnConfig();
   @track dataList = [];
   @wire(getAdminDataChildren, {
     adminCode: "$inputedAdminCode",
@@ -127,7 +32,7 @@ export default class AdminDataChildren extends NavigationMixin(
   wired_getAdminDataChildren(result) {
     this.loading = true;
     this._wiredStudentResult = result;
-    this.dataList = testDataList;
+    this.dataList = Consts.ad_children_testDataList();
     if (result.data) {
       console.log("result.data:", result.data);
     } else if (result.error) {
