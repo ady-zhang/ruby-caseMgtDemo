@@ -4,7 +4,7 @@ import Consts from "c/consts";
 //import STATUS_OPEN from '@salesforce/label/c.STATUS_OPEN';
 
 
-export default class CaseFilterForm extends LightningElement {
+export default class CmCaseFilterForm extends LightningElement {
   name = "Filter Cases";
   error;
   @track lobs = [

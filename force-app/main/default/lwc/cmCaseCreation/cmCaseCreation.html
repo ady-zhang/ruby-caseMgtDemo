@@ -1,10 +1,6 @@
 <template>
     <span onshowmodal={handleShowDialog}>
-        <c-sub-case-creation case-num={caseNum}>
-            <div slot="footer">
-                <lightning-button label="Close" variant="brand" onclick={closeSubCase}></lightning-button>
-            </div>
-        </c-sub-case-creation>
+        <c-cm-sub-case-creation case-num={caseNum} sub-case-num={subCaseNum}></c-cm-sub-case-creation>
     </span>
     <lightning-card title={caseTitle}>
         <lightning-button-group slot="actions">
@@ -14,7 +10,7 @@
             <lightning-button-icon icon-name={iconName} alternative-text={iconTitle} title={iconTitle}
                 onclick={handleIconAction}></lightning-button-icon>
         </lightning-button-group>
-        <c-case-creation-form in-case-num={caseNum} onsavecase={handleSaveCase}></c-case-creation-form>
+        <c-cm-case-creation-form in-case-num={caseNum} onsavecase={handleSaveCase}></c-cm-case-creation-form>
     </lightning-card>
     <lightning-card title={subCaseTitle}>
         <lightning-button-group slot="actions">
@@ -26,16 +22,16 @@
         </lightning-button-group>
         <lightning-tabset variant="standard" active-tab-value="one">
             <lightning-tab label="12345-1" value="one">
-                <c-case-creation-sub-case-form in-case-num={caseNum} in-sub-case-num="1" onsavecase={handleSaveSubCase}>
-                </c-case-creation-sub-case-form>
+                <c-cm-sub-case-creation-form in-case-num={caseNum} in-sub-case-num="1" onsavecase={handleSaveSubCase}>
+                </c-cm-sub-case-creation-form>
             </lightning-tab>
             <lightning-tab label="12345-2" value="two">
-                <c-case-creation-sub-case-form in-case-num={caseNum} in-sub-case-num="2" onsavecase={handleSaveSubCase}>
-                </c-case-creation-sub-case-form>
+                <c-cm-sub-case-creation-form in-case-num={caseNum} in-sub-case-num="2" onsavecase={handleSaveSubCase}>
+                </c-cm-sub-case-creation-form>
             </lightning-tab>
             <lightning-tab label="12345-3" value="three">
-                <c-case-creation-sub-case-form in-case-num={caseNum} in-sub-case-num="3" onsavecase={handleSaveSubCase}>
-                </c-case-creation-sub-case-form>
+                <c-cm-sub-case-creation-form in-case-num={caseNum} in-sub-case-num="3" onsavecase={handleSaveSubCase}>
+                </c-cm-sub-case-creation-form>
             </lightning-tab>
         </lightning-tabset>
 

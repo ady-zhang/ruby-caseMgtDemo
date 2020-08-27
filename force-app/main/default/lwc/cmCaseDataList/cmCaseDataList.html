@@ -13,10 +13,13 @@
         <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
       </template>
 
-      <lightning-datatable key-field="Id" data={dataList} columns={columnsList} sorted-by={sortedBy}
-        sorted-direction={sortDirection} default-sort-direction={defaultSortDirection} onsort={onHandleSort}
-        onrowaction={handleRowAction} onrowselection={onRowSelection}>
-      </lightning-datatable>
+      <div class="slds-scrollable scrollerSize">
+        <lightning-datatable key-field="Id" data={dataList} columns={columnsList} sorted-by={sortedBy}
+          sorted-direction={sortDirection} default-sort-direction={defaultSortDirection} onsort={onHandleSort}
+          onrowaction={handleRowAction} onrowselection={onRowSelection}>
+        </lightning-datatable>
+      </div>
+
     </div>
   </lightning-card>
 </template>

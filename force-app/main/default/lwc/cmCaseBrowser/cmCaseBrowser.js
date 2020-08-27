@@ -1,6 +1,6 @@
 import { LightningElement } from "lwc";
 
-export default class CaseBrowser extends LightningElement {
+export default class CmCaseBrowser extends LightningElement {
   modalHeader = "";
   modalContent = "";
   handleShowModal(event) {

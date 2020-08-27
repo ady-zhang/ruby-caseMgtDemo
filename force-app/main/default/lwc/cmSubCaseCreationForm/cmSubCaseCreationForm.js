@@ -1,6 +1,6 @@
 import { LightningElement, api } from 'lwc';
 
-export default class CaseCreationSubCaseForm extends LightningElement {
+export default class CmSubCaseCreationForm extends LightningElement {
     @api inCaseNum;
     @api inSubCaseNum;
 

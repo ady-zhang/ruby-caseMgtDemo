@@ -204,7 +204,7 @@ const testDataList = [
   }
 ];
 
-export default class CaseDataList extends NavigationMixin(LightningElement) {
+export default class CmCaseDataList extends NavigationMixin(LightningElement) {
   title = "Case List";
   @api filterMap;
   inputedAdminCode = "";

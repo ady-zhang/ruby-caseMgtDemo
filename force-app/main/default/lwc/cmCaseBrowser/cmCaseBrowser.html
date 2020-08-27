@@ -1,6 +1,6 @@
 <template>
   <template if:true={newMode}>
-    <c-case-creation></c-case-creation>
+    <c-cm-case-creation></c-cm-case-creation>
   </template>
 
   <template if:true={listMode}>
@@ -11,12 +11,11 @@
           <lightning-button label="Close" variant="brand" onclick={closeModal}></lightning-button>
         </div>
       </c-modal>
-  
-      <c-case-filter-form onfilterchange={handleFilterChange}></c-case-filter-form>
-  
-      <div class="slds-scrollable scrollerSize">
-        <c-case-data-list filter-map={filterMap} ontriggeraction={handleTriggerAction}></c-case-data-list>
-      </div>
+
+      <c-cm-case-filter-form onfilterchange={handleFilterChange}></c-cm-case-filter-form>
+
+      <c-cm-case-data-list filter-map={filterMap} ontriggeraction={handleTriggerAction}></c-cm-case-data-list>
+
     </span>
   </template>
 </template>
