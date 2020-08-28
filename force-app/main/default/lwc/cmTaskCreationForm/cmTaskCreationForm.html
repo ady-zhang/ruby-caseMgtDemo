@@ -1,0 +1,67 @@
+<template>
+    <lightning-card variant="Narrow" title={title}>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox required name="workGroup" label="Work Group"
+                    value={workGroup} placeholder="Select Work Group" options={workGroups}
+                    onchange={handleWorkGroupChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox required name="workGroupLoc" label="Work Group Location"
+                    value={workGroupLoc} placeholder="Select Work Group Location" options={workGroupLocs}
+                    onchange={handleWorkGroupLocChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-combobox required name="taskCode" label="Task Code" value={taskCode}
+                    placeholder="Select Task Code" options={taskCodes} onchange={handleTaskCodeChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input required type="text" name="taskTargetTime"
+                    label="Task Target Time" value={taskTargetTime} placeholder="0000d00h00m"></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input required type="date" name="taskTargetDate"
+                    label="Task Target Date" value={taskTargetDate}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
+                padding="around-small">
+                <lightning-input type="checkbox" name="followSubCaseTargetTime"
+                    label="Follow Sub Case Target Time" value={followSubCaseTargetTime}></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th scope="col" colspan="5" align="center"> Alert Difination </th>
+                </tr>
+            </thead>
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th scope="col"> Alert Function </th>
+                    <th scope="col"> Alert Time(xxdxxhxxm) </th>
+                    <th scope="col"> Alert Type </th>
+                    <th scope="col"> Alert Recipient </th>
+                    <th scope="col"> Alert Content </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="slds-hint-parent">
+                    <th scope="row"> Cloudhub </th>
+                    <th scope="row"> 00d00h00m </th>
+                    <th scope="row"> K </th>
+                    <th scope="row"> Prospecting </th>
+                    <th scope="row"> Test... </th>
+                </tr>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

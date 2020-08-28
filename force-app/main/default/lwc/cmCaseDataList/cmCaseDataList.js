@@ -97,18 +97,7 @@ export default class CmCaseDataList extends NavigationMixin(LightningElement) {
         "Not Available",
         "The delete row function is not available."
       );
-      // Opens the Admin Data record modal to view a particular record.
-      /*  let pageInfo = {
-              type: "standard__recordPage",
-              attributes: {
-                recordId: recordId,
-                objectApiName: "Cms_Admin_Data__c", // objectApiName is optional
-                actionName: "edit"
-              }
-            };
-            console.log(pageInfo);
-            this[NavigationMixin.Navigate](pageInfo);
-          */
+      
     } else {
       Utils.showAlert("Please select a record first!");
     }

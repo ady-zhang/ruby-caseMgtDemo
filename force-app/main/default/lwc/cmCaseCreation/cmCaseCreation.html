@@ -1,6 +1,6 @@
 <template>
     <span onshowsubcasedialog={handleShowDialog}>
-        <c-cm-sub-case-creation-dialog case-num={caseNum} sub-case-num={subCaseNum}></c-cm-sub-case-creation-dialog>
+        <c-cm-sub-case-dialog case-num={caseNum} sub-case-num={subCaseNum}></c-cm-sub-case-dialog>
     </span>
     <lightning-card title={caseTitle}>
         <lightning-button-group slot="actions">
@@ -24,14 +24,17 @@
             <lightning-tab label="12345-1" value="one">
                 <c-cm-sub-case-creation-form in-case-num={caseNum} in-sub-case-num="1" onsavecase={handleSaveSubCase}>
                 </c-cm-sub-case-creation-form>
+                <c-cm-task-data-list in-case-num={caseNum} in-sub-case-num="1"></c-cm-task-data-list>
             </lightning-tab>
             <lightning-tab label="12345-2" value="two">
                 <c-cm-sub-case-creation-form in-case-num={caseNum} in-sub-case-num="2" onsavecase={handleSaveSubCase}>
                 </c-cm-sub-case-creation-form>
+                <c-cm-task-data-list in-case-num={caseNum} in-sub-case-num="2"></c-cm-task-data-list>
             </lightning-tab>
             <lightning-tab label="12345-3" value="three">
                 <c-cm-sub-case-creation-form in-case-num={caseNum} in-sub-case-num="3" onsavecase={handleSaveSubCase}>
                 </c-cm-sub-case-creation-form>
+                <c-cm-task-data-list in-case-num={caseNum} in-sub-case-num="3"></c-cm-task-data-list>
             </lightning-tab>
         </lightning-tabset>
 

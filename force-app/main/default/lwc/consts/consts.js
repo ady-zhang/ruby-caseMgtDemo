@@ -413,4 +413,82 @@ export default class Consts {
   };
 
 
+  /** Task Data List Test Data */
+  static task_list_columnConfig() {
+    return [
+      {
+        label: 'Task Num',
+        fieldName: 'Task_Num',
+        type: 'text'
+      },
+      {
+        label: 'Task Description',
+        fieldName: 'Task_Desc',
+        type: 'text'
+      },
+      {
+        label: 'Task Status',
+        fieldName: 'Task_Status',
+        type: 'text'
+      },
+      {
+        label: 'Task Resolver',
+        fieldName: 'Task_Resolver',
+        type: 'text'
+      },
+      {
+        label: 'Target Date',
+        fieldName: 'Target_Date',
+        type: 'text'
+      },
+      {
+        label: 'SLA Time',
+        fieldName: 'SLA_Time',
+        type: 'text'
+      },
+      {
+        label: 'SLA Remain Time',
+        fieldName: 'SLA_Remain_Time',
+        type: 'text'
+      },
+      {
+        label: 'Reason',
+        fieldName: 'Reason',
+        type: 'text'
+      }
+    ]
+  };
+
+  static task_list_testDataList() {
+    return [
+      {
+        Id: '1001',
+        Case_Num: '13836',
+        Sub_Case_Num: '1',
+        Task_Num: '1',
+        Task_Desc: 'Follow-up with customer',
+        Task_Status: 'OPEN',
+        Task_Resolver: 'TGT01-Gold Tier 2',
+        Target_Date: '2015/05/29 17:24:14',
+        SLA_Time: '03d00h00m',
+        SLA_Remain_Time: '-1917d23h52m',
+        Reason: ''
+      },
+      {
+        Id: '1002',
+        Case_Num: '13837',
+        Sub_Case_Num: '1',
+        Task_Num: '2',
+        Task_Desc: 'Gold - Investigation',
+        Task_Status: 'CLOSE',
+        Task_Resolver: 'TGB01-Gold BO',
+        Target_Date: '2015/05/29 17:24:14',
+        SLA_Time: '03d00h00m',
+        SLA_Remain_Time: '-06d22h25m',
+        Reason: 'Investigation Complete'
+      }
+    ]
+  };
+
+
 }

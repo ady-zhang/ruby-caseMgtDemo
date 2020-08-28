@@ -1,0 +1,36 @@
+<template>
+    <lightning-card variant="Narrow" title={title} icon-name="utility:task">
+        <lightning-button-group slot="actions">
+            <lightning-button variant="brand-outline" icon-name="utility:refresh" label="Refresh" onclick={onRefresh}>
+            </lightning-button>
+            <lightning-button variant="brand-outline" icon-name="utility:new" label="New" onclick={onNew}>
+            </lightning-button>
+            <lightning-button variant="brand-outline" icon-name="utility:edit" label="Edit" onclick={onEdit}
+                disabled={btnGroupDisabled}></lightning-button>
+            <!-- Open or Close function -->
+            <lightning-button-icon icon-name={iconName} alternative-text={iconTitle} title={iconTitle}
+                onclick={handleIconAction}></lightning-button-icon>
+        </lightning-button-group>
+        <!-- Task Data Table -->
+        <div class="slds-is-relative">
+            <template if:true={loading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            </template>
+
+            <div class="slds-scrollable scrollerSize">
+                <lightning-datatable key-field="Id" data={dataList} columns={columnsList}
+                    onrowselection={onRowSelection}>
+                </lightning-datatable>
+            </div>
+        </div>
+    </lightning-card>
+    
+  <!-- Task Dialog -->
+  <span onshowtaskdialog={handleShowTaskDialog}>
+    <c-cm-task-dialog>
+      <c-cm-task-creation-form in-case-num={inCaseNum} in-sub-case-num={inSubCaseNum}>
+      </c-cm-task-creation-form>
+    </c-cm-task-dialog>
+  </span>
+
+</template>

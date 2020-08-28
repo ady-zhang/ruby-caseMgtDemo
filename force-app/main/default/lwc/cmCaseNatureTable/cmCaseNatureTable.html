@@ -1,76 +1,76 @@
 <template>
-    <table>
+    <table class="slds-table slds-table_cell-buffer">
         <thead>
-            <tr>
-                <td>Nature</td>
-                <td>Sub Nature</td>
-                <td>Department Involved</td>
-                <td>Primary</td>
+            <tr class="slds-line-height_reset">
+                <th scope="col">Nature</th>
+                <th scope="col">Sub Nature</th>
+                <th scope="col">Department Involved</th>
+                <th scope="col">Primary</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
+            <tr class="slds-hint-parent">
+                <th scope="row">
                     <lightning-combobox name="nature1" label="Nature" variant="label-hidden" value={nature1}
                         placeholder="Select Nature" options={natures} onchange={handleNature1Change}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-combobox name="subNature1" label="Sub Nature" variant="label-hidden" value={subNature1}
                         placeholder="Select Sub Nature" options={subNatures} onchange={handleSubNature1Change}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-combobox name="deptInv1" label="Department Involved" variant="label-hidden"
                         value={deptInv1} placeholder="Select Department Involved" options={deptInves}
                         onchange={handleDeptInv1Change}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-input type="checkbox" name="primary1" label="Primary" variant="label-hidden"></lightning-input>
-                </td>
+                </th>
             </tr>
-            <tr>
-                <td>
+            <tr class="slds-hint-parent">
+                <th scope="row">
                     <lightning-combobox name="nature2" label="Nature" variant="label-hidden" value={nature2}
                         placeholder="Select Nature" options={natures} onchange={handleNatureChange}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-combobox name="subNature2" label="Sub Nature" variant="label-hidden" value={subNature2}
                         placeholder="Select Sub Nature" options={subNatures} onchange={handleSubNatureChange}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-combobox name="deptInv2" label="Department Involved" variant="label-hidden"
                         value={deptInv2} placeholder="Select Department Involved" options={deptInves}
                         onchange={handleDeptInvChange}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-input type="checkbox" name="primary2" label="Primary" variant="label-hidden"></lightning-input>
-                </td>
+                </th>
             </tr>
-            <tr>
-                <td>
+            <tr class="slds-hint-parent">
+                <th scope="row">
                     <lightning-combobox name="nature3" label="Nature" variant="label-hidden" value={nature3}
                         placeholder="Select Nature" options={natures} onchange={handleNatureChange}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-combobox name="subNature3" label="Sub Nature" variant="label-hidden" value={subNature3}
                         placeholder="Select Sub Nature" options={subNatures} onchange={handleSubNatureChange}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-combobox name="deptInv3" label="Department Involved" variant="label-hidden"
                         value={deptInv3} placeholder="Select Department Involved" options={deptInves}
                         onchange={handleDeptInvChange}>
                     </lightning-combobox>
-                </td>
-                <td>
+                </th>
+                <th scope="row">
                     <lightning-input type="checkbox" name="primary3" label="Primary" variant="label-hidden"></lightning-input>
-                </td>
+                </th>
             </tr>
         </tbody>
     </table>

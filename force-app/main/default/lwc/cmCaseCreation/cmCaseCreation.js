@@ -18,12 +18,12 @@ export default class CmCaseCreation extends LightningElement {
 
     showSubCase() {
         this.subCaseNum = '00';
-        const dialog = this.template.querySelector('c-cm-sub-case-creation-dialog');
+        const dialog = this.template.querySelector('c-cm-sub-case-dialog');
         dialog.show();
     }
 
     closeSubCase() {
-        const dialog = this.template.querySelector('c-cm-sub-case-creation-dialog');
+        const dialog = this.template.querySelector('c-cm-sub-case-dialog');
         dialog.hide();
     }
 

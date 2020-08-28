@@ -7,7 +7,7 @@
       <lightning-button variant="brand-outline" icon-name="utility:edit" label="Edit" onclick={onEdit}
         disabled={btnGroupDisabled}></lightning-button>
     </lightning-button-group>
-    <!-- Admin Data Table -->
+    <!-- Case Data Table -->
     <div class="slds-is-relative">
       <template if:true={loading}>
         <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
@@ -19,7 +19,6 @@
           onrowaction={handleRowAction} onrowselection={onRowSelection}>
         </lightning-datatable>
       </div>
-
     </div>
   </lightning-card>
 </template>

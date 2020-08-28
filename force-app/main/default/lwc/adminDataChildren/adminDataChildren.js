@@ -131,7 +131,7 @@ export default class AdminDataChildren extends NavigationMixin(
   }
 
   showCreationDialog() {
-    const dialog = this.template.querySelector('c-admin-data-creation-dialog');
+    const dialog = this.template.querySelector('c-admin-data-dialog');
     dialog.show();
   }
 
