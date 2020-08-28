@@ -28,7 +28,8 @@ export default class AdminDataCreationChildForm extends LightningElement {
 
     initData() {
         let options = [
-            { value: '270', label: '19 District' },
+            { value: 'MOB', label: 'Mobile' },
+            { value: 'MVNO', label: 'MVNO' },
             { value: '170', label: 'Adjustment Reason' },
             { value: '103', label: 'Agent Code' },
             { value: '460', label: 'Branch' }

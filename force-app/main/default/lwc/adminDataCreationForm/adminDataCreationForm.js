@@ -25,10 +25,11 @@ export default class AdminDataCreationForm extends LightningElement {
 
     initData() {
         let options = [
-            { value: '270', label: '19 District' },
-            { value: '170', label: 'Adjustment Reason' },
-            { value: '103', label: 'Agent Code' },
-            { value: '460', label: 'Branch' }
+            { value: 'LOB', label: 'LOB' },
+            { value: '50', label: 'Case Type' },
+            { value: '60', label: 'Case Sub Type' },
+            { value: '70', label: 'Case Nature' },
+            { value: '170', label: 'Adjustment Reason' }
         ];
         this.param.acFilteringOptions = options;
         this.param.acMappingOptions = options;
