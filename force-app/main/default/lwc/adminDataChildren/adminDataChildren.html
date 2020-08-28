@@ -8,6 +8,8 @@
       <lightning-button variant="brand-outline" icon-name="utility:new" label="New" onclick={onNew}></lightning-button>
       <lightning-button variant="brand-outline" icon-name="utility:edit" label="Edit" onclick={onEdit}
         disabled={btnGroupDisabled}></lightning-button>
+      <lightning-button variant="brand-outline" icon-name="utility:delete" label="Delete" onclick={onDelete}
+        disabled={btnGroupDisabled}></lightning-button>
     </lightning-button-group>
     <!-- Admin Data Table -->
     <div class="slds-is-relative">
@@ -24,11 +26,12 @@
 -->
     </div>
   </lightning-card>
-  
+
   <!-- Admin Data Child Creation Dialog -->
   <span onshowadccreationdialog={handleShowAdcCreationDialog}>
     <c-admin-data-creation-dialog>
-      <c-admin-data-creation-child-form in-ac-master={selectedAcMaster} in-admin-code={selectedAdminCode} in-method={method}></c-admin-data-creation-child-form>
+      <c-admin-data-creation-child-form in-ac-master={selectedAcMaster} in-admin-code={selectedAdminCode}
+        in-method={method}></c-admin-data-creation-child-form>
     </c-admin-data-creation-dialog>
   </span>
 

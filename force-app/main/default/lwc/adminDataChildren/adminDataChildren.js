@@ -94,6 +94,14 @@ export default class AdminDataChildren extends NavigationMixin(
     }, 500);
   }
 
+  onNew() {
+    this.method = Consts.ADD;
+    this.selectedAcMaster = this.acMaster;
+    this.selectedAdminCode = '';
+
+    this.showCreationDialog();
+  }
+
   onEdit() {
     this.method = Consts.EDIT;
 
@@ -109,12 +117,17 @@ export default class AdminDataChildren extends NavigationMixin(
     }
   }
 
-  onNew() {
-    this.method = Consts.ADD;
-    this.selectedAcMaster = this.acMaster;
-    this.selectedAdminCode = '';
+  onDelete() {
+    this.method = Consts.DELETE;
 
-    this.showCreationDialog();
+    let dataList = this.getSelectedDataList();
+    if (dataList.length > 0) {
+      Utils.showToast(this, "Warning", "The delete row function is not available.", "warning");
+    } else {
+      Utils.showToast(this, "Warning", "Please select a record first!", "warning");
+    }
+    //promise is resolved
+    refreshApex(this._wiredStudentResult);
   }
 
   showCreationDialog() {
