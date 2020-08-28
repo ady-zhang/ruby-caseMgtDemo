@@ -7,6 +7,7 @@ import getAdminDataList from "@salesforce/apex/AdminDataService.getAdminDataList
 
 export default class AdminDataList extends NavigationMixin(LightningElement) {
   title = "Admin Data List";
+  method = Consts.ADD;
   acMaster = Consts.KEYN;
   inputedAdminCode = "";
   inputedDescription = "";
@@ -92,6 +93,8 @@ export default class AdminDataList extends NavigationMixin(LightningElement) {
   }
 
   onEdit() {
+    this.method = Consts.EDIT;
+
     let dataList = this.getSelectedDataList();
     if (dataList.length > 0) {
       let data = dataList[0];
@@ -105,6 +108,10 @@ export default class AdminDataList extends NavigationMixin(LightningElement) {
   }
 
   onNew() {
+    this.method = Consts.ADD;
+    this.selectedAcMaster = Consts.KEYN;
+    this.selectedAdminCode = '';
+
     this.showCreationDialog();
 
   }

@@ -5,25 +5,27 @@ import Consts from 'c/consts';
 export default class AdminDataCreationForm extends LightningElement {
     @api inAcMaster;
     @api inAdminCode;
-    @track param = {
-        id: '',
-        acMaster: Consts.KEYN,
-        acValue: '',
-        acDescEn: '',
-        acDescTc: '',
-        acDescSc: '',
-        acFiltering: '',
-        acFilteringOptions: [],
-        acMapping: '',
-        acMappingOptions: [],
-        mappedByOtherKeyValue: true
-    };
+    @api inMethod;
+    @track param = {};
 
     connectedCallback() {
         this.initData();
     }
 
     initData() {
+        this.param = {
+            id: '',
+            acMaster: Consts.KEYN,
+            acValue: '',
+            acDescEn: '',
+            acDescTc: '',
+            acDescSc: '',
+            acFiltering: '',
+            acFilteringOptions: [],
+            acMapping: '',
+            acMappingOptions: [],
+            mappedByOtherKeyValue: true
+        };
         let options = [
             { value: 'LOB', label: 'LOB' },
             { value: '50', label: 'Case Type' },
@@ -41,13 +43,17 @@ export default class AdminDataCreationForm extends LightningElement {
         adminCode: "$inAdminCode"
     })
     wired_getAdminDataByCode({ error, data }) {
-        console.log('error: ', error);
-        console.log('data: ', data);
-        let adminData = this.getAdminDataByCode();
-        this.convertDataToParam(adminData);
-
-        if (error) {
-            this.error = error;
+        if(this.inMethod === Consts.EDIT) {
+            if (error) {
+                this.error = error;
+            }
+            if(data) {
+                let adminData = this.getAdminDataByCode();
+                this.convertDataToParam(adminData);
+            }
+        }
+        if(this.inMethod === Consts.ADD) {
+            this.initData();
         }
     }
 
@@ -59,8 +65,6 @@ export default class AdminDataCreationForm extends LightningElement {
                 adminData = data;
             }
         });
-        console.log('testDataList:', testDataList);
-        console.log('adminData:', adminData);
         return adminData;
     }
 

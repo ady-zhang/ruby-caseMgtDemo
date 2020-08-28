@@ -8,6 +8,7 @@ import getAdminDataChildren from "@salesforce/apex/AdminDataService.getAdminData
 export default class AdminDataChildren extends NavigationMixin(
   LightningElement
 ) {
+  method = Consts.ADD;
   @api acMaster = "10";
   title = "Admin Data List";
   inputedAdminCode = "";
@@ -94,6 +95,8 @@ export default class AdminDataChildren extends NavigationMixin(
   }
 
   onEdit() {
+    this.method = Consts.EDIT;
+
     let dataList = this.getSelectedDataList();
     if (dataList.length > 0) {
       let data = dataList[0];
@@ -107,6 +110,10 @@ export default class AdminDataChildren extends NavigationMixin(
   }
 
   onNew() {
+    this.method = Consts.ADD;
+    this.selectedAcMaster = this.acMaster;
+    this.selectedAdminCode = '';
+
     this.showCreationDialog();
   }
 

@@ -6,27 +6,29 @@ import Consts from 'c/consts';
 export default class AdminDataCreationChildForm extends LightningElement {
     @api inAcMaster;
     @api inAdminCode;
-    @track param = {
-        id: '',
-        acMaster: '60',
-        acValue: '',
-        acDescEn: '',
-        acDescTc: '',
-        acDescSc: '',
-        acFiltering: '',
-        acFilteringOptions: [],
-        acFilteringValues: [],
-        acMapping: '',
-        acMappingOptions: [],
-        acMappingValues: [],
-        mappedByOtherKeyValue: true
-    };
+    @api inMethod;
+    @track param = {};
 
     connectedCallback() {
         this.initData();
     }
 
     initData() {
+        this.param = {
+            id: '',
+            acMaster: '60',
+            acValue: '',
+            acDescEn: '',
+            acDescTc: '',
+            acDescSc: '',
+            acFiltering: '',
+            acFilteringOptions: [],
+            acFilteringValues: [],
+            acMapping: '',
+            acMappingOptions: [],
+            acMappingValues: [],
+            mappedByOtherKeyValue: true
+        };
         let options = [
             { value: 'MOB', label: 'Mobile' },
             { value: 'MVNO', label: 'MVNO' },
@@ -44,13 +46,17 @@ export default class AdminDataCreationChildForm extends LightningElement {
         adminCode: "$inAdminCode"
     })
     wired_getAdminDataByCode({ error, data }) {
-        console.log('error: ', error);
-        console.log('data: ', data);
-        let adminData = this.getAdminDataByCode();
-        this.convertDataToParam(adminData);
-
-        if (error) {
-            this.error = error;
+        if(this.inMethod === Consts.EDIT) {
+            if (error) {
+                this.error = error;
+            }
+            if(data) {
+                let adminData = this.getAdminDataByCode();
+                this.convertDataToParam(adminData);
+            }
+        }
+        if(this.inMethod === Consts.ADD) {
+            this.initData();
         }
     }
 
@@ -62,8 +68,6 @@ export default class AdminDataCreationChildForm extends LightningElement {
                 adminData = data;
             }
         });
-        console.log('testDataList:', testDataList);
-        console.log('adminData:', adminData);
         return adminData;
     }
 
