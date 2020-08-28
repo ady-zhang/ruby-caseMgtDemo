@@ -3,17 +3,17 @@ import Utils from "c/utils";
 import Consts from "c/consts";
 import { refreshApex } from "@salesforce/apex";
 import { NavigationMixin } from "lightning/navigation";
-//import { encodeDefaultFieldValues } from "lightning/pageReferenceUtils";
 import getAdminDataChildren from "@salesforce/apex/AdminDataService.getAdminDataChildren";
 
 export default class AdminDataChildren extends NavigationMixin(
   LightningElement
 ) {
-  @api acMasterId = "10";
+  @api acMaster = "10";
   title = "Admin Data List";
   inputedAdminCode = "";
   inputedDescription = "";
-  selectedAdminCodeId = "";
+  selectedAdminCode = "";
+  selectedAcMaster = "";
 
   handleFilterChange(event) {
     this.inputedAdminCode = event.detail.adminCode;
@@ -94,53 +94,27 @@ export default class AdminDataChildren extends NavigationMixin(
   }
 
   onEdit() {
-    debugger;
-    let ids = this.getSelectedIDs();
-    console.log(ids);
-    if (ids.length > 0) {
-      let recordId = ids[0];
-      Utils.showModal(
-        this,
-        "Not Available",
-        "The delete row function is not available."
-      );
-      // Opens the Admin Data record modal to view a particular record.
-      /*  let pageInfo = {
-        type: "standard__recordPage",
-        attributes: {
-          recordId: recordId,
-          objectApiName: "Cms_Admin_Data__c", // objectApiName is optional
-          actionName: "edit"
-        }
-      };
-      console.log(pageInfo);
-      this[NavigationMixin.Navigate](pageInfo);
-    */
+    let dataList = this.getSelectedDataList();
+    if (dataList.length > 0) {
+      let data = dataList[0];
+      this.selectedAcMaster = data.Admin_Code_Master;
+      this.selectedAdminCode = data.Admin_Code;
+
+      this.showCreationDialog();
     } else {
-      Utils.showAlert("Please select a record first!");
+      Utils.showToast(this, "Warning", "Please select a record first!", "warning");
     }
   }
 
   onNew() {
-    // Opens the new Admin Data record modal dialog with the Admin Data Marter = 'KEYN'
-    /*
-      let pageInfo = {
-        type: "standard__objectPage",
-        attributes: {
-          objectApiName: "Cms_Admin_Data__c",
-          actionName: "new"
-        },
-        state: {
-          defaultFieldValues: encodeDefaultFieldValues({
-            Admin_Code_Master__c: this.acMasterId
-          })
-        }
-      };
-      this[NavigationMixin.Navigate](pageInfo);
-   */
+    this.showCreationDialog();
+  }
+
+  showCreationDialog() {
     const dialog = this.template.querySelector('c-admin-data-creation-dialog');
     dialog.show();
   }
+
 
   btnGroupDisabled = true;
   onRowSelection(event) {
@@ -148,13 +122,10 @@ export default class AdminDataChildren extends NavigationMixin(
     this.btnGroupDisabled = numSelected === 0;
   }
 
-  getSelectedIDs() {
+  getSelectedDataList() {
     let datatable = this.template.querySelector("lightning-datatable");
     let selectedRows = datatable.getSelectedRows();
-    let ids = [];
-    selectedRows.forEach((r) => {
-      ids.push(r.Id);
-    });
-    return ids;
+    console.log("selectedRows", selectedRows);
+    return selectedRows;
   }
 }

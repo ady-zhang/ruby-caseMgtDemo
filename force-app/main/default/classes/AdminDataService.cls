@@ -72,4 +72,15 @@ public with sharing class AdminDataService {
     ];
     return adminCodeList;
   }
+
+  @AuraEnabled(cacheable=true)
+  public static Map<String, Object> getAdminDataByCode(
+    String acMaster,
+    String adminCode
+  ) {
+    Map<String, Object> dataMap = new Map<String, Object>();
+    //TODO get Data from DB...
+    dataMap.put('testData', 'Test Data');
+    return dataMap;
+  }
 }

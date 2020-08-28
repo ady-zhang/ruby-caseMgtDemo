@@ -1,52 +1,66 @@
 <template>
     <form class="slds-form_stacked slds-p-around_medium">
-        <lightning-layout multiple-rows>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acMaster" label="Admin Code Master" value={acMaster}
-                    disabled>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acValue" label="Admin Code" value={acValue}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-combobox name="acFiltering" label="Admin Code Filtering" value={acFiltering}
-                    placeholder="Select Admin Code Filtering" options={acFilteringOptions} onchange={handleAcFilteringChange}>
-                </lightning-combobox>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-combobox name="acMapping" label="Admin Code Mapping" value={acMapping}
-                    placeholder="Select Admin Code Mapping" options={acMappingOptions} onchange={handleAcMappingChange}>
-                </lightning-combobox>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acDescEn" label="Description(English)" value={acDescEn}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acDescTc" label="Description(Traditional Chinese)"
-                    value={acDescTc}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acDescSc" label="Description(Simplified Chinese)"
-                    value={acDescSc}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input type="checkbox" name="mappedByOtherKeyValue" label="Mapped by Other Key value"
-                    value={mappedByOtherKeyValue} checked>
-                </lightning-input>
-            </lightning-layout-item>
-        </lightning-layout>
+        <table class="slds-table slds-table_cell-buffer">
+            <tbody>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acMaster"
+                            label="Admin Code Master" value={param.acMaster} disabled>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acValue" label="Admin Code"
+                            value={param.acValue}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acDescEn"
+                            label="Description(English)" value={param.acDescEn}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acDescTc"
+                            label="Description(Traditional Chinese)" value={param.acDescTc}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acDescSc"
+                            label="Description(Simplified Chinese)" value={param.acDescSc}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-combobox variant="label-inline" name="acFiltering" label="Admin Code Filtering"
+                            value={param.acFiltering} placeholder="Select Admin Code Filtering" options={param.acFilteringOptions}
+                            onchange={handleAcFilteringChange}>
+                        </lightning-combobox>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-combobox variant="label-inline" name="acMapping" label="Admin Code Mapping"
+                            value={param.acMapping} placeholder="Select Admin Code Mapping" options={param.acMappingOptions}
+                            onchange={handleAcMappingChange}>
+                        </lightning-combobox>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input type="checkbox" variant="label-inline" name="mappedByOtherKeyValue"
+                            label="Mapped by Other Key value" value={param.mappedByOtherKeyValue} checked>
+                        </lightning-input>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
     </form>
 </template>

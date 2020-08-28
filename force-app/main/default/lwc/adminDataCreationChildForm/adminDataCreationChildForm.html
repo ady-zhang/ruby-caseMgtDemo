@@ -1,48 +1,61 @@
 <template>
     <form class="slds-form_stacked slds-p-around_medium">
-        <lightning-layout multiple-rows>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acMaster" label="Admin Code Master" value={acMaster}
-                    disabled>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acValue" label="Admin Code" value={acValue}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acDescEn" label="Description(English)" value={acDescEn}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acDescTc" label="Description(Traditional Chinese)"
-                    value={acDescTc}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-input required type="text" name="acDescSc" label="Description(Simplified Chinese)"
-                    value={acDescSc}>
-                </lightning-input>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-dual-listbox name="acFiltering" label="Admin Code Filtering" source-label="Available"
-                    selected-label="Selected" field-level-help="This is an Admin Code Filtering dual listbox"
-                    options={acFilteringOptions} value={acFilteringValues} onchange={handleAcFilteringChange}>
-                </lightning-dual-listbox>
-            </lightning-layout-item>
-            <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3"
-                padding="around-small">
-                <lightning-dual-listbox name="acMapping" label="Admin Code Mapping" source-label="Available"
-                    selected-label="Selected" field-level-help="This is an Admin Code Mapping dual listbox"
-                    options={acMappingOptions} value={acMappingValues} onchange={handleAcMappingChange}>
-                </lightning-dual-listbox>
-            </lightning-layout-item>
-        </lightning-layout>
+        <table class="slds-table slds-table_cell-buffer">
+            <tbody>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acMaster"
+                            label="Admin Code Master" value={param.acMaster} disabled>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acValue" label="Admin Code"
+                            value={param.acValue}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acDescEn"
+                            label="Description(English)" value={param.acDescEn}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acDescTc"
+                            label="Description(Traditional Chinese)" value={param.acDescTc}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-input required type="text" variant="label-inline" name="acDescSc"
+                            label="Description(Simplified Chinese)" value={param.acDescSc}>
+                        </lightning-input>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-dual-listbox variant="label-inline" name="acFiltering" label="Admin Code Filtering"
+                            source-label="Available" selected-label="Selected"
+                            field-level-help="This is an Admin Code Filtering dual listbox" options={param.acFilteringOptions}
+                            value={param.acFilteringValues} onchange={handleAcFilteringChange}>
+                        </lightning-dual-listbox>
+                    </th>
+                </tr>
+                <tr class="slds-hint-parent">
+                    <th scope="row">
+                        <lightning-dual-listbox variant="label-inline" name="acMapping" label="Admin Code Mapping"
+                            source-label="Available" selected-label="Selected"
+                            field-level-help="This is an Admin Code Mapping dual listbox" options={param.acMappingOptions}
+                            value={param.acMappingValues} onchange={handleAcMappingChange}>
+                        </lightning-dual-listbox>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
     </form>
 </template>

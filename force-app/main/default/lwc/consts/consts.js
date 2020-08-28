@@ -58,6 +58,7 @@ export default class Consts {
       {
         Id: "1001",
         Admin_Code: "50",
+        Admin_Code_Master: "KEYN",
         Description_En: "Case Type",
         Description_Tc: "Case Type",
         Description_Sc: "Case Type",
@@ -68,6 +69,7 @@ export default class Consts {
       {
         Id: "1002",
         Admin_Code: "60",
+        Admin_Code_Master: "KEYN",
         Description_En: "Case Sub Type",
         Description_Tc: "Case Sub Type",
         Description_Sc: "Case Sub Type",
@@ -78,6 +80,7 @@ export default class Consts {
       {
         Id: "1003",
         Admin_Code: "70",
+        Admin_Code_Master: "KEYN",
         Description_En: "Case Nature",
         Description_Tc: "Case Nature",
         Description_Sc: "Case Nature",
@@ -88,6 +91,7 @@ export default class Consts {
       {
         Id: "1004",
         Admin_Code: "80",
+        Admin_Code_Master: "KEYN",
         Description_En: "Case Sub Nature",
         Description_Tc: "Case Sub Nature",
         Description_Sc: "Case Sub Nature",
@@ -155,8 +159,8 @@ export default class Consts {
     return [
       {
         Id: "10001",
-        Admin_Code_Master: "50",
         Admin_Code: "10",
+        Admin_Code_Master: "50",
         Description_En: "Charges Dispute",
         Description_Tc: "收費爭議",
         Description_Sc: "收费争议",
@@ -166,8 +170,8 @@ export default class Consts {
       },
       {
         Id: "10002",
-        Admin_Code_Master: "50",
         Admin_Code: "11",
+        Admin_Code_Master: "50",
         Description_En: "Bill Adjustment",
         Description_Tc: "Bill Adjustment",
         Description_Sc: "Bill Adjustment",
@@ -177,8 +181,8 @@ export default class Consts {
       },
       {
         Id: "10003",
-        Admin_Code_Master: "50",
         Admin_Code: "20",
+        Admin_Code_Master: "50",
         Description_En: "General Complaint",
         Description_Tc: "基本投訴",
         Description_Sc: "基本投诉",
@@ -188,8 +192,8 @@ export default class Consts {
       },
       {
         Id: "10004",
-        Admin_Code_Master: "50",
         Admin_Code: "30",
+        Admin_Code_Master: "50",
         Description_En: "Network Complaint",
         Description_Tc: "網络投訴",
         Description_Sc: "网络投诉",
