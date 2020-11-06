@@ -1,0 +1,55 @@
+<template>
+    <lightning-card title="Uploaded Files" icon-name="standard:account">
+        <div style="margin-left:4%">
+            <div>
+                <lightning-input type="file" label="" onchange={handleFileChanges}></lightning-input>
+                <!-- <lightning-input type="file" label="" onchange={handleFileChanges} multiple></lightning-input> -->
+            </div>
+
+            <div if:true={fileNames} class="slds-text-body_small slds-text-color_error">{fileNames}
+                <template if:true={showLoadingSpinner}>
+                    <lightning-spinner alternative-text="Uploading......" size="large"></lightning-spinner>
+                </template>
+            </div><br />
+
+            <lightning-button class="slds-m-top--medium" label="Upload Files" onclick={handleSaveFiles} variant="brand">
+            </lightning-button>
+        </div><br />
+
+        <!-- <template if:true={data}>
+            <lightning-card title="Files List" icon-name="standard:event">
+                <div style="width: auto;">
+                    <lightning-datatable data={data} columns={columns} key-field="id"></lightning-datatable>
+                </div>
+            </lightning-card>
+        </template> -->
+        <!-- <template>
+            <lightning-card title="Files List" icon-name="standard:event"></lightning-card>
+            <a href="javascript:;" data-name={attachmentName} data-url={attachmentUrl} onclick={downloadImg}>{attachmentName}</a>
+
+        </template> -->
+        <lightning-card title="Files List" icon-name="standard:event">
+            <div style="width: auto; margin-left:0.7rem">
+                <!-- <a href="javascript:;" class="attacheResoure"  data-id="cd512a95-7002-498a-a20d-9e26a3eb81ab" onclick={downloadImg}></a> -->
+                <a href="javascript:;" class="attacheResoure" data-id="" data-name="" onclick={downloadImg}></a>
+                <!-- <lightning-datatable data={data} columns={columns} key-field="id"></lightning-datatable> -->
+            </div>
+        </lightning-card><br /><br />
+        <!-- <input id="file" type="file" name="file" onchange={handleFileChanges}></input> -->
+
+        <a href="javascript:;" class="downloadResoure" download="" style="display:none">download</a>
+
+        <!-- <lightning-file-upload label="上传附件" name="fileUploader" accept={acceptedFormats} record-id={recordId}
+            onuploadfinished={handleFileChanges} multiple>
+        </lightning-file-upload> -->
+        <!-- <span onclick={getImageUrl}>点击我，获取图片内容</span>
+        <img class="imageShow2" src="http://images.pexels.com/photos/4310445/pexels-photo-4310445.jpeg"/> -->
+
+        <!-- <img class="imageShow" src="https://dev.alfresco.com/alfresco/s/api/node/workspace/SpacesStore/82eb6ac1-c47f-41fd-a659-581bb2f05ed4/content?alf_ticket=TICKET_b5cf44e01e6e1b3746eaf39bf3be5b55f5a4bc5b"/> -->
+
+        <span onclick={testAlfresco}>测试大文件下载</span>
+
+        <input id="file" type="file" name="file" onchange={handleFileChanges}></input>
+
+    </lightning-card>
+</template>
