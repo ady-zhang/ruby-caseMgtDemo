@@ -1,6 +1,6 @@
 public with sharing class AdminDataService {
   @AuraEnabled(cacheable=true)
-  public static List<Cms_Admin_Data__c> getAdminDataList(
+  public static List<SR_Admin_Data__c> getAdminDataList(
     String adminCode,
     String description
   ) {
@@ -12,19 +12,18 @@ public with sharing class AdminDataService {
     if (String.isNotEmpty(description)) {
       filtrDescription = '%' + description + '%';
     }
-    List<Cms_Admin_Data__c> adminCodeList = [
+    List<SR_Admin_Data__c> adminCodeList = [
       SELECT
         Id,
         Name,
         Description__c,
         Language__c,
         Admin_Code_Master__c,
-        Admin_Code_Parent__c,
         Delete_Indicator__c,
         CreatedById,
         LastModifiedById,
         OwnerId
-      FROM Cms_Admin_Data__c
+      FROM SR_Admin_Data__c
       WHERE
         (Admin_Code_Master__c = NULL
         OR Admin_Code_Master__c = 'KEYN')
@@ -37,7 +36,7 @@ public with sharing class AdminDataService {
   }
 
   @AuraEnabled(cacheable=true)
-  public static List<Cms_Admin_Data__c> getAdminDataChildren(
+  public static List<SR_Admin_Data__c> getAdminDataChildren(
     String adminCode,
     String description
   ) {
@@ -49,19 +48,18 @@ public with sharing class AdminDataService {
     if (String.isNotEmpty(description)) {
       filtrDescription = '%' + description + '%';
     }
-    List<Cms_Admin_Data__c> adminCodeList = [
+    List<SR_Admin_Data__c> adminCodeList = [
       SELECT
         Id,
         Name,
         Description__c,
         Language__c,
         Admin_Code_Master__c,
-        Admin_Code_Parent__c,
         Delete_Indicator__c,
         CreatedById,
         LastModifiedById,
         OwnerId
-      FROM Cms_Admin_Data__c
+      FROM SR_Admin_Data__c
       WHERE
         Admin_Code_Master__c != NULL
         AND Admin_Code_Master__c != 'KEYN'

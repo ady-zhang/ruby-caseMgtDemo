@@ -4,6 +4,7 @@ public with sharing class CallAlfresco{
 	static final String userName = 'rubypoc';
 	static final String password = 'Rubypoc2020';
 	static final String domain = 'http://13.228.73.46:8080/';
+	static final String storagFolderID = '5ad65c46-ca5e-468a-bd72-5eaef8c03ef2';
 
 	@AuraEnabled(cacheable = true)
 	public static String getTicket(){
@@ -92,7 +93,11 @@ public with sharing class CallAlfresco{
 
 			//start
 			Entry entry = new Entry();
-			String parentNodeId = '5ad65c46-ca5e-468a-bd72-5eaef8c03ef2';
+
+			//TODO File 
+
+			// Named Jessie Folder
+			String parentNodeId = storagFolderID;	// '5ad65c46-ca5e-468a-bd72-5eaef8c03ef2';
 			FileInfo fileData = (FileInfo)JSON.deserialize(JSON.serialize(filesToInsert[0]), FileInfo.class);
 			// create a file content
 			String nodeId = CreateFloderOrFileNode(parentNodeId, fileData.title, 'cm:content');

@@ -40,15 +40,21 @@ export default class CustomFileUploader extends NavigationMixin(LightningElement
                 let freader = new FileReader();
                 freader.onload = f => {
                     let base64 = 'base64,';
+                    console.log("freader: ", freader);
+                    console.log("freader.result: ", freader.result);
                     let content = freader.result.indexOf(base64) + base64.length;
                     let fileContents = freader.result.substring(content);
                     this.filesUploaded.push({
                         Title: file.name,
-                        VersionData: fileContents,
-                        File: file
+                        VersionData: fileContents //,
+                        // File: file
                     });
+                    console.log("file: ", file);
+                    console.log("content: ", content);
+                    console.log("fileContents: ", fileContents);
                 };
                 freader.readAsDataURL(file);
+                console.log("filesUploaded: ", this.filesUploaded);
             }
             this.fileNames = filesName.slice(0, -1);
         }

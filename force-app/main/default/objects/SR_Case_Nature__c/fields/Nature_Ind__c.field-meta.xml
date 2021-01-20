@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nature_Ind__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Y)es/N)o to indicate Case Nature 1 whether input</description>
+    <externalId>false</externalId>
+    <label>Nature Ind</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

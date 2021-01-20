@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Determination_ID__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Determination ID from Case Determination</description>
+    <externalId>false</externalId>
+    <label>Determination ID</label>
+    <referenceTo>SR_Case_Determination__c</referenceTo>
+    <relationshipLabel>Workflow Definitions</relationshipLabel>
+    <relationshipName>SR_Workflow_Definition</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
